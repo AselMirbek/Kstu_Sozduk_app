@@ -1,4 +1,3 @@
-//
 //  TabBarController.swift
 //  SocialMediaKstu
 //
@@ -8,6 +7,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import FirebaseAuth
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
@@ -15,17 +15,26 @@ class TabBarController: UITabBarController {
         self.setupTabs()
         self.selectedIndex = 1
         self.tabBar.tintColor = UIColor.colorBlue;       self.tabBar.unselectedItemTintColor = .gray
-
+        checkUserAuthentication()
         // Установка белого фона для tabBar
         UITabBar.appearance().backgroundColor = .white
         self.tabBar.backgroundImage = UIImage() // Прозрачный фон
         self.tabBar.isTranslucent = false
     }
+     func checkUserAuthentication() {
+           if let user = Auth.auth().currentUser {
+               // Если пользователь авторизован, показываем табы
+               setupTabs()
+           } else {
+               // Если пользователь не авторизован, показываем экран логина
+               showLoginScreen()
+           }
+       }
 
     private func setupTabs() {
         // Создаем контроллеры с иконками и заголовками
         let home = createNav(with: "Главная", and: UIImage(systemName: "house.fill"), vc: MainController())
-        let wallet = createNav(with: "Статистика", and: UIImage(systemName: "chart.line.uptrend.xyaxis"), vc: StatisController())
+        let wallet = createNav(with: "Статистика", and: UIImage(systemName: "chart.line.uptrend.xyaxis"), vc: StatisticsViewController())
         let profile = createNav(with: "Профиль", and: UIImage(systemName: "person.fill"), vc: ProfileController())
 
         // Устанавливаем контроллеры для TabBarController
@@ -46,4 +55,10 @@ class TabBarController: UITabBarController {
         nav.tabBarItem.image = image
         return nav
     }
+    private func showLoginScreen() {
+           let loginViewController = LogInController(viewModel: LoginViewModel())
+           loginViewController.modalPresentationStyle = .fullScreen
+           self.present(loginViewController, animated: true, completion: nil)
+       }
+
 }

@@ -14,6 +14,7 @@ class DocumentController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCustomNavigationBar(title: "Правила", backButtonAction: #selector(backPressed))
 
         // Создаем конфигурацию WKWebView
         let webViewConfiguration = WKWebViewConfiguration()
@@ -44,5 +45,8 @@ class DocumentController: UIViewController, WKNavigationDelegate {
     // Делегат для отслеживания завершения загрузки
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("Загрузка завершена")
+    }
+    @objc func backPressed() {
+        navigationController?.popViewController(animated: true)
     }
 }

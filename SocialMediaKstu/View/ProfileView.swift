@@ -19,6 +19,7 @@ class ProfileView: UIView {
         return label
     }()
     
+    
      let genderSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Мужчина", "Женщина"])
         segmentedControl.selectedSegmentIndex = 0
@@ -113,6 +114,7 @@ class ProfileView: UIView {
             make.centerX.equalToSuperview()
 
         }
+       
         }
         
     }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		805E30212D19AF5F0058B373 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E30202D19AF5F0058B373 /* StatisticsViewController.swift */; };
+		805E30292D19C9A60058B373 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E30282D19C9A60058B373 /* ChartViewModel.swift */; };
+		805E302A2D19CB8E0058B373 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E30202D19AF5F0058B373 /* StatisticsViewController.swift */; };
+		805E302D2D19D36F0058B373 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 805E302C2D19D36F0058B373 /* DGCharts */; };
+		805E302F2D19D73A0058B373 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E302E2D19D73A0058B373 /* CustomTableViewCell.swift */; };
+		805E30312D19DAB50058B373 /* CustomUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E30302D19DAB50058B373 /* CustomUINavigationBar.swift */; };
+		805E30332D19E3EF0058B373 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E30322D19E3EF0058B373 /* File.swift */; };
 		8062722E2D09529E001F3A4B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062722D2D09529E001F3A4B /* RegistrationController.swift */; };
 		806272302D095553001F3A4B /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062722F2D095553001F3A4B /* LogInController.swift */; };
 		8062723A2D119DC3001F3A4B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 806272392D119DC3001F3A4B /* SnapKit */; };
@@ -30,7 +37,7 @@
 		806AE2A92D196D2B005ECCC7 /* Rules.html in Resources */ = {isa = PBXBuildFile; fileRef = 806AE2A82D196C3F005ECCC7 /* Rules.html */; };
 		8073E03A2D0057B200A8FE77 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0392D0057B200A8FE77 /* TabBarController.swift */; };
 		8073E0412D00591B00A8FE77 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0402D00591B00A8FE77 /* MainController.swift */; };
-		8073E0432D00593300A8FE77 /* StatisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0422D00593300A8FE77 /* StatisController.swift */; };
+		8073E0432D00593300A8FE77 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0422D00593300A8FE77 /* StatisticsViewModel.swift */; };
 		8073E04F2D005C9500A8FE77 /* tilda-sans_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0472D005C9500A8FE77 /* tilda-sans_light.ttf */; };
 		8073E0502D005C9500A8FE77 /* tilda-sans_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0482D005C9500A8FE77 /* tilda-sans_bold.ttf */; };
 		8073E0512D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0492D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf */; };
@@ -89,6 +96,12 @@
 
 /* Begin PBXFileReference section */
 		805E301F2D198AE20058B373 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		805E30202D19AF5F0058B373 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		805E30262D19C76E0058B373 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = System/Library/Frameworks/Charts.framework; sourceTree = SDKROOT; };
+		805E30282D19C9A60058B373 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		805E302E2D19D73A0058B373 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		805E30302D19DAB50058B373 /* CustomUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUINavigationBar.swift; sourceTree = "<group>"; };
+		805E30322D19E3EF0058B373 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8062722D2D09529E001F3A4B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		8062722F2D095553001F3A4B /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		806AE2842D132AF3005ECCC7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -109,7 +122,7 @@
 		806AE2A82D196C3F005ECCC7 /* Rules.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Rules.html; sourceTree = "<group>"; };
 		8073E0392D0057B200A8FE77 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8073E0402D00591B00A8FE77 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		8073E0422D00593300A8FE77 /* StatisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisController.swift; sourceTree = "<group>"; };
+		8073E0422D00593300A8FE77 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		8073E0472D005C9500A8FE77 /* tilda-sans_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_light.ttf"; sourceTree = "<group>"; };
 		8073E0482D005C9500A8FE77 /* tilda-sans_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_bold.ttf"; sourceTree = "<group>"; };
 		8073E0492D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_extra-bold-.ttf"; sourceTree = "<group>"; };
@@ -146,6 +159,7 @@
 				8073E05F2D0060D200A8FE77 /* FirebaseCore in Frameworks */,
 				8073E0612D0060D200A8FE77 /* FirebaseFirestore in Frameworks */,
 				8073E0632D0060D200A8FE77 /* FirebaseStorage in Frameworks */,
+				805E302D2D19D36F0058B373 /* DGCharts in Frameworks */,
 				8062723A2D119DC3001F3A4B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,11 +181,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		805E30252D19C76D0058B373 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				805E30262D19C76E0058B373 /* Charts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		806AE2882D132E3F005ECCC7 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				806AE2862D132E1B005ECCC7 /* AnimatedTextField.swift */,
 				806AE2A12D14795D005ECCC7 /* CustomSegmented.swift */,
+				805E302E2D19D73A0058B373 /* CustomTableViewCell.swift */,
+				805E30302D19DAB50058B373 /* CustomUINavigationBar.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -211,13 +235,14 @@
 				80FDABB52CFE124400216637 /* GameViewController.swift */,
 				8062722D2D09529E001F3A4B /* RegistrationController.swift */,
 				8073E0642D0061DF00A8FE77 /* SplashViewController.swift */,
-				8073E0422D00593300A8FE77 /* StatisController.swift */,
 				8073E0392D0057B200A8FE77 /* TabBarController.swift */,
 				8073E0402D00591B00A8FE77 /* MainController.swift */,
 				806AE2972D140247005ECCC7 /* ResultGameController.swift */,
 				806AE2992D1411F2005ECCC7 /* DocumentController.swift */,
 				806AE29B2D14120B005ECCC7 /* HistoryController.swift */,
 				806AE2A32D153DBB005ECCC7 /* ProfileController.swift */,
+				805E30202D19AF5F0058B373 /* StatisticsViewController.swift */,
+				805E30322D19E3EF0058B373 /* File.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -230,6 +255,8 @@
 				806AE2892D133508005ECCC7 /* LoginViewModel.swift */,
 				806AE28D2D13436F005ECCC7 /* RegistationModel.swift */,
 				806AE2A52D154375005ECCC7 /* GameViewModel.swift */,
+				8073E0422D00593300A8FE77 /* StatisticsViewModel.swift */,
+				805E30282D19C9A60058B373 /* ChartViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +277,7 @@
 				80FDABC72CFE124B00216637 /* SocialMediaKstuTests */,
 				80FDABD12CFE124C00216637 /* SocialMediaKstuUITests */,
 				80FDABAF2CFE124400216637 /* Products */,
+				805E30252D19C76D0058B373 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,8 +335,8 @@
 			buildPhases = (
 				80FDABAA2CFE124400216637 /* Sources */,
 				80FDABAB2CFE124400216637 /* Frameworks */,
-				80FDABAC2CFE124400216637 /* Resources */,
 				806272322D118A05001F3A4B /* Embed Frameworks */,
+				80FDABAC2CFE124400216637 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -322,6 +350,7 @@
 				8073E0622D0060D200A8FE77 /* FirebaseStorage */,
 				806272392D119DC3001F3A4B /* SnapKit */,
 				806AE29D2D1412D0005ECCC7 /* FirebaseDatabase */,
+				805E302C2D19D36F0058B373 /* DGCharts */,
 			);
 			productName = SocialMediaKstu;
 			productReference = 80FDABAE2CFE124400216637 /* SocialMediaKstu.app */;
@@ -398,6 +427,7 @@
 			packageReferences = (
 				8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				806272382D119DC3001F3A4B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				805E302B2D19D0340058B373 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 80FDABAF2CFE124400216637 /* Products */;
 			projectDirPath = "";
@@ -457,7 +487,9 @@
 				806272302D095553001F3A4B /* LogInController.swift in Sources */,
 				806AE2872D132E1B005ECCC7 /* AnimatedTextField.swift in Sources */,
 				806AE28E2D13436F005ECCC7 /* RegistationModel.swift in Sources */,
+				805E30312D19DAB50058B373 /* CustomUINavigationBar.swift in Sources */,
 				806AE2A22D14795D005ECCC7 /* CustomSegmented.swift in Sources */,
+				805E30332D19E3EF0058B373 /* File.swift in Sources */,
 				806AE28C2D13387C005ECCC7 /* RegistrationView.swift in Sources */,
 				806AE28A2D133508005ECCC7 /* LoginViewModel.swift in Sources */,
 				80FDABB22CFE124400216637 /* AppDelegate.swift in Sources */,
@@ -466,17 +498,20 @@
 				8073E0412D00591B00A8FE77 /* MainController.swift in Sources */,
 				806AE2962D1401CC005ECCC7 /* ResultView.swift in Sources */,
 				806AE2A42D153DBB005ECCC7 /* ProfileController.swift in Sources */,
+				805E30212D19AF5F0058B373 /* StatisticsViewController.swift in Sources */,
 				806AE2A02D14741E005ECCC7 /* ProfileView.swift in Sources */,
 				806AE2A62D154375005ECCC7 /* GameViewModel.swift in Sources */,
+				805E30292D19C9A60058B373 /* ChartViewModel.swift in Sources */,
 				806AE29A2D1411F3005ECCC7 /* DocumentController.swift in Sources */,
 				806AE2852D132AF3005ECCC7 /* LoginView.swift in Sources */,
 				806AE2922D140180005ECCC7 /* GameView.swift in Sources */,
 				8073E06D2D007C7500A8FE77 /* StatisModel.swift in Sources */,
 				806AE29C2D14120B005ECCC7 /* HistoryController.swift in Sources */,
 				806AE2982D140247005ECCC7 /* ResultGameController.swift in Sources */,
-				8073E0432D00593300A8FE77 /* StatisController.swift in Sources */,
+				8073E0432D00593300A8FE77 /* StatisticsViewModel.swift in Sources */,
 				8062722E2D09529E001F3A4B /* RegistrationController.swift in Sources */,
 				8073E0652D0061DF00A8FE77 /* SplashViewController.swift in Sources */,
+				805E302F2D19D73A0058B373 /* CustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805E302A2D19CB8E0058B373 /* StatisticsViewController.swift in Sources */,
 				80FDABD32CFE124C00216637 /* SocialMediaKstuUITests.swift in Sources */,
 				80FDABD52CFE124C00216637 /* SocialMediaKstuUITestsLaunchTests.swift in Sources */,
 			);
@@ -821,6 +857,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		805E302B2D19D0340058B373 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		806272382D119DC3001F3A4B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -840,6 +884,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		805E302C2D19D36F0058B373 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 805E302B2D19D0340058B373 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
 		806272392D119DC3001F3A4B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 806272382D119DC3001F3A4B /* XCRemoteSwiftPackageReference "SnapKit" */;

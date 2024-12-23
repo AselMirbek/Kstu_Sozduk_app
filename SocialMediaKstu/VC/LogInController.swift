@@ -30,7 +30,7 @@ class LogInController: UIViewController {
             super.viewDidLoad()
             addTargets()
             addDelegates()
-            print("Navigation controller: \(navigationController)")
+   //         print("Navigation controller: \(navigationController)")
 
             
         }

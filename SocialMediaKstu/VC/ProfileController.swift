@@ -11,7 +11,8 @@ class ProfileController: UIViewController {
     // MARK: - Properties
     private let profileView = ProfileView()
     private let viewModel = ProfileViewModel()
-    private let logInModel = LoginViewModel()
+    private let loginviewModel = LoginViewModel()
+
     
     // MARK: - Lifecycle Methods
     override func loadView() {
@@ -21,7 +22,7 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTargets()
-        title = "Профиль"
+        setupTitleCustomNavigationBar(title: "Профиль")
         view.backgroundColor = .systemBackground
         
         setupBindings()
@@ -60,25 +61,16 @@ class ProfileController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         alertController.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { _ in
-            // Выход из Firebase
-            self.logInModel.logOut()
-            
-            // Переход к экрану логина
-            if let navigationController = self.navigationController {
-                navigationController.popToRootViewController(animated: true)
-            } else {
-                self.dismiss(animated: true) {
-                    let loginViewController = LogInController(viewModel: LoginViewModel())
-                    loginViewController.modalPresentationStyle = .fullScreen
-                    self.present(loginViewController, animated: true, completion: nil)
-                }
-            }
+            // Вызываем метод для выхода из системы
+            self.loginviewModel.logOut()
+            // Переход на экран логина
+                   if let tabBarController = self.tabBarController as? TabBarController {
+                       tabBarController.checkUserAuthentication()  // Перепроверяем состояние и показываем экран логина
+                   }
         }))
         
         present(alertController, animated: true, completion: nil)
     }
-
-
 
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

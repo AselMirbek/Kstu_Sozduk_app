@@ -134,8 +134,23 @@ func textField(
 extension RegistrationController: RegistrationDelegate {
     func didSucceed(withData data: RegisterResponse) {
         print("Registration successful")
-        let vc = LogInController(viewModel: LoginViewModel())
-        navigationController?.pushViewController(vc, animated: true)
+        // Показать Alert о успешной регистрации
+              let alertController = UIAlertController(title: "Успешная регистрация",
+                                                      message: "Вы успешно зарегистрированы! Теперь вы можете начать пользоваться приложением.",
+                                                      preferredStyle: .alert)
+              
+              // Кнопка OK
+              let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                  // Переход на экран аккаунта пользователя (например, на экран профиля)
+                  let tabbarController = TabBarController()  // Здесь ваш контроллер профиля
+                  tabbarController.modalPresentationStyle = .fullScreen
+                  self.present(tabbarController, animated: true, completion: nil)
+
+              }
+              
+              alertController.addAction(okAction)
+              present(alertController, animated: true, completion: nil)
+          
     }
     
     func didFail(withError error: Error) {

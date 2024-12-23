@@ -53,5 +53,5 @@ class LoginViewModel: LoginProtocol {
                print("Error signing out: \(error.localizedDescription)")
            }
        }
-  
+   
 }

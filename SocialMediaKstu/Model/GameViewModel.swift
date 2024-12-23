@@ -41,7 +41,8 @@ struct GameHistoryItem {
 // MARK: - ViewModel
 class GameViewModel {
     private let firestore = Firestore.firestore()
-
+    private let auth = Auth.auth()
+    var email: String?
     // Список слов для игры
     private let words: [Word] = [
         Word(label: "Алма", options: ["Яблоко", "Груша", "Банан", "Апельсин"], correctAnswer: "Яблоко"),
@@ -108,45 +109,79 @@ class GameViewModel {
         totalMistakes = 0
     }
     // Сохранение истории игры в Firestore
-    func saveGameHistory(correctAnswers: Int, totalMistakes: Int) {
-           let date = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
-           let historyItem: [String: Any] = [
-               "correctAnswers": correctAnswers,
-               "totalMistakes": totalMistakes,
-               "date": date
-           ]
-           
-           firestore.collection("gameHistory").addDocument(data: historyItem) { error in
-               if let error = error {
-                   print("Ошибка при сохранении истории игры: \(error.localizedDescription)")
-               } else {
-                   print("История игры успешно сохранена.")
-               }
-           }
-       }
+    func saveGameHistory(correctAnswers: Int, totalMistakes: Int, completion: @escaping (Bool) -> Void) {
+        guard let userId = auth.currentUser?.uid else {
+            completion(false)
+            return
+        }
+        
+        let date = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
+        
+        let historyItem: [String: Any] = [
+            "correctAnswers": correctAnswers,
+            "totalMistakes": totalMistakes,
+            "date": date
+        ]
+        
+        // Сохраняем в подколлекцию gameHistory для пользователя с данным userId
+        firestore.collection("users")
+            .document(userId)
+            .collection("gameHistory")
+            .addDocument(data: historyItem) { error in
+                if let error = error {
+                    print("Ошибка при сохранении истории игры: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    print("История игры успешно сохранена.")
+                    completion(true)
+                }
+            }
+    }
+    
     // Завершение игры
     func endGame() {
         // Передаем правильные ответы и количество ошибок в метод сохранения
-        saveGameHistory(correctAnswers: correctAnswers, totalMistakes: totalMistakes)
-        resetGame()
+        saveGameHistory(correctAnswers: correctAnswers, totalMistakes: totalMistakes) { success in
+            if success {
+                self.resetGame()
+            } else {
+                print("Не удалось сохранить историю игры.")
+            }
+        }
+    }
+    func fetchUserEmail(completion: @escaping (String?) -> Void) {
+        if let currentUser = Auth.auth().currentUser {
+            completion(currentUser.email)
+        } else {
+            completion(nil)
+        }
     }
     // Получение истории игр из Firestore
     func fetchGameHistory(completion: @escaping ([GameHistoryItem]) -> Void) {
-           firestore.collection("gameHistory").getDocuments { snapshot, error in
-               if let error = error {
-                   print("Ошибка при загрузке истории игр: \(error.localizedDescription)")
-                   return
-               }
-               
-               var historyItems: [GameHistoryItem] = []
-               for document in snapshot?.documents ?? [] {
-                   if let correctAnswers = document["correctAnswers"] as? Int,
-                      let totalMistakes = document["totalMistakes"] as? Int,
-                      let date = document["date"] as? String {
-                       let item = GameHistoryItem(correctAnswers: correctAnswers, totalMistakes: totalMistakes, date: date)
-                       historyItems.append(item)
-                   }
-               }
-               completion(historyItems)
-           }
-       }}
+        guard let userId = auth.currentUser?.uid else {
+            print("Пользователь не авторизован")
+            return
+        }
+        
+        firestore.collection("users")
+            .document(userId)
+            .collection("gameHistory")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Ошибка при загрузке истории игр: \(error.localizedDescription)")
+                    return
+                }
+                
+                var historyItems: [GameHistoryItem] = []
+                for document in snapshot?.documents ?? [] {
+                    if let correctAnswers = document["correctAnswers"] as? Int,
+                       let totalMistakes = document["totalMistakes"] as? Int,
+                       let date = document["date"] as? String {
+                        let item = GameHistoryItem(correctAnswers: correctAnswers, totalMistakes: totalMistakes, date: date)
+                        historyItems.append(item)
+                    }
+                }
+                completion(historyItems)
+            }
+    }
+}

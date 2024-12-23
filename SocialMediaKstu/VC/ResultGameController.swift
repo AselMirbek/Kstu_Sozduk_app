@@ -17,6 +17,8 @@ class ResultGameController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCustomNavigationBar(title: "История", backButtonAction: #selector(backPressed))
+
         setupUI()
         displayResults()
         saveGameHistory()
@@ -56,9 +58,26 @@ class ResultGameController: UIViewController {
     }
 
     @objc private func playAgainTapped() {
-        navigationController?.popViewController(animated: true)
-    }
-    private func saveGameHistory() {
-            viewModel.saveGameHistory(correctAnswers: correctAnswers, totalMistakes: totalMistakes)
+            // Сбрасываем параметры игры
+            correctAnswers = 0
+            totalMistakes = 0
+            
+            // Здесь можно перезапустить игру. Например, если есть ViewController для начала игры, его можно вызвать:
+            if let gameController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as? GameViewController {
+                navigationController?.pushViewController(gameController, animated: true)
+            }
         }
+    @objc func backPressed() {
+            navigationController?.popViewController(animated: true)
+        }
+    private func saveGameHistory() {
+        viewModel.saveGameHistory(correctAnswers: correctAnswers, totalMistakes: totalMistakes) { success in
+            if success {
+                print("История игры успешно сохранена.")
+            } else {
+                print("Ошибка при сохранении истории игры.")
+            }
+        }
+    }
+
 }

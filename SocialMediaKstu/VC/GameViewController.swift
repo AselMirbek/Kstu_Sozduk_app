@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCustomNavigationBar(title: "Игра", backButtonAction: #selector(backPressed))
+
         setupActions()
         updateUI()
     }
@@ -75,7 +77,9 @@ class GameViewController: UIViewController {
     @objc private func answer4Tapped() {
         handleAnswer(gameView.answer4Button.title(for: .normal))
     }
-
+    @objc func backPressed() {
+            navigationController?.popViewController(animated: true)
+        }
     private func handleAnswer(_ answer: String?) {
         guard let answer = answer else { return }
 

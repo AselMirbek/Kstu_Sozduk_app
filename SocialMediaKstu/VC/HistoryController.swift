@@ -22,6 +22,8 @@ class HistoryController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCustomNavigationBar(title: "История", backButtonAction: #selector(backPressed))
+
         setupUI()
         fetchHistory()
     }
@@ -42,6 +44,9 @@ class HistoryController: UIViewController {
             }
         }
     }
+    @objc func backPressed() {
+            navigationController?.popViewController(animated: true)
+        }
 }
 
 // MARK: - UITableViewDataSource

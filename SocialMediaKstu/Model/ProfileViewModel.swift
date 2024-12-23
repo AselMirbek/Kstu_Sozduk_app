@@ -7,6 +7,7 @@
 struct ProfileModel {
     let gender: String
     let age: Int
+    
 }
 
 import Foundation
@@ -31,15 +32,23 @@ class ProfileViewModel {
             completion(false)
             return
         }
+        // Проверяем наличие email
+              guard let email = Auth.auth().currentUser?.email else {
+                  print("Email отсутствует у текущего пользователя.")
+                  completion(false)
+                  return
+              }
 
         let age = calculateAge(from: birthDate)
 
         let data: [String: Any] = [
             "gender": gender,
             "age": age,
+            "email": email,
             "birthDate": Timestamp(date: birthDate) // Firestore поддерживает тип Timestamp
 
         ]
+        print("Сохраняемые данные: \(data)")
 
         db.collection("users").document(userId).setData(data, merge: true) { error in
             if let error = error {
