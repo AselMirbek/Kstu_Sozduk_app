@@ -7,10 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8062722E2D09529E001F3A4B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062722D2D09529E001F3A4B /* RegistrationController.swift */; };
+		806272302D095553001F3A4B /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062722F2D095553001F3A4B /* LogInController.swift */; };
+		8062723A2D119DC3001F3A4B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 806272392D119DC3001F3A4B /* SnapKit */; };
+		806AE2852D132AF3005ECCC7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2842D132AF3005ECCC7 /* LoginView.swift */; };
+		806AE2872D132E1B005ECCC7 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2862D132E1B005ECCC7 /* AnimatedTextField.swift */; };
+		806AE28A2D133508005ECCC7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2892D133508005ECCC7 /* LoginViewModel.swift */; };
+		806AE28C2D13387C005ECCC7 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE28B2D13387C005ECCC7 /* RegistrationView.swift */; };
+		806AE28E2D13436F005ECCC7 /* RegistationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE28D2D13436F005ECCC7 /* RegistationModel.swift */; };
+		806AE2922D140180005ECCC7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2912D140180005ECCC7 /* GameView.swift */; };
+		806AE2942D1401A7005ECCC7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2932D1401A7005ECCC7 /* MainView.swift */; };
+		806AE2962D1401CC005ECCC7 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2952D1401CC005ECCC7 /* ResultView.swift */; };
+		806AE2982D140247005ECCC7 /* ResultGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2972D140247005ECCC7 /* ResultGameController.swift */; };
+		806AE29A2D1411F3005ECCC7 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2992D1411F2005ECCC7 /* DocumentController.swift */; };
+		806AE29C2D14120B005ECCC7 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE29B2D14120B005ECCC7 /* HistoryController.swift */; };
+		806AE29E2D1412D0005ECCC7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 806AE29D2D1412D0005ECCC7 /* FirebaseDatabase */; };
+		806AE2A02D14741E005ECCC7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE29F2D14741E005ECCC7 /* ProfileView.swift */; };
+		806AE2A22D14795D005ECCC7 /* CustomSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2A12D14795D005ECCC7 /* CustomSegmented.swift */; };
+		806AE2A42D153DBB005ECCC7 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2A32D153DBB005ECCC7 /* ProfileController.swift */; };
+		806AE2A62D154375005ECCC7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2A52D154375005ECCC7 /* GameViewModel.swift */; };
+		806AE2A72D1544DA005ECCC7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AE2A52D154375005ECCC7 /* GameViewModel.swift */; };
+		806AE2A92D196D2B005ECCC7 /* Rules.html in Resources */ = {isa = PBXBuildFile; fileRef = 806AE2A82D196C3F005ECCC7 /* Rules.html */; };
+		8073E03A2D0057B200A8FE77 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0392D0057B200A8FE77 /* TabBarController.swift */; };
+		8073E0412D00591B00A8FE77 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0402D00591B00A8FE77 /* MainController.swift */; };
+		8073E0432D00593300A8FE77 /* StatisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0422D00593300A8FE77 /* StatisController.swift */; };
+		8073E04F2D005C9500A8FE77 /* tilda-sans_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0472D005C9500A8FE77 /* tilda-sans_light.ttf */; };
+		8073E0502D005C9500A8FE77 /* tilda-sans_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0482D005C9500A8FE77 /* tilda-sans_bold.ttf */; };
+		8073E0512D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0492D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf */; };
+		8073E0522D005C9500A8FE77 /* tilda-sans_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E04A2D005C9500A8FE77 /* tilda-sans_semibold.ttf */; };
+		8073E0532D005C9500A8FE77 /* tilda-sans_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E04B2D005C9500A8FE77 /* tilda-sans_black.ttf */; };
+		8073E0542D005C9500A8FE77 /* tilda-sans_vf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E04C2D005C9500A8FE77 /* tilda-sans_vf.ttf */; };
+		8073E0552D005C9500A8FE77 /* tilda-sans_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E04D2D005C9500A8FE77 /* tilda-sans_regular.ttf */; };
+		8073E0562D005C9500A8FE77 /* tilda-sans_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8073E04E2D005C9500A8FE77 /* tilda-sans_medium.ttf */; };
+		8073E05D2D0060D200A8FE77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8073E05C2D0060D200A8FE77 /* FirebaseAuth */; };
+		8073E05F2D0060D200A8FE77 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8073E05E2D0060D200A8FE77 /* FirebaseCore */; };
+		8073E0612D0060D200A8FE77 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8073E0602D0060D200A8FE77 /* FirebaseFirestore */; };
+		8073E0632D0060D200A8FE77 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8073E0622D0060D200A8FE77 /* FirebaseStorage */; };
+		8073E0652D0061DF00A8FE77 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E0642D0061DF00A8FE77 /* SplashViewController.swift */; };
+		8073E0672D00793B00A8FE77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8073E0662D00793B00A8FE77 /* GoogleService-Info.plist */; };
+		8073E06B2D007B6F00A8FE77 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E06A2D007B6F00A8FE77 /* ProfileViewModel.swift */; };
+		8073E06D2D007C7500A8FE77 /* StatisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E06C2D007C7500A8FE77 /* StatisModel.swift */; };
 		80FDABB22CFE124400216637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDABB12CFE124400216637 /* AppDelegate.swift */; };
 		80FDABB42CFE124400216637 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDABB32CFE124400216637 /* SceneDelegate.swift */; };
-		80FDABB62CFE124400216637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDABB52CFE124400216637 /* ViewController.swift */; };
-		80FDABB92CFE124400216637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FDABB72CFE124400216637 /* Main.storyboard */; };
+		80FDABB62CFE124400216637 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDABB52CFE124400216637 /* GameViewController.swift */; };
 		80FDABBB2CFE124B00216637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FDABBA2CFE124B00216637 /* Assets.xcassets */; };
 		80FDABBE2CFE124B00216637 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FDABBC2CFE124B00216637 /* LaunchScreen.storyboard */; };
 		80FDABC92CFE124B00216637 /* SocialMediaKstuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDABC82CFE124B00216637 /* SocialMediaKstuTests.swift */; };
@@ -35,12 +74,57 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		806272322D118A05001F3A4B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8062722D2D09529E001F3A4B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		8062722F2D095553001F3A4B /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		806AE2842D132AF3005ECCC7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		806AE2862D132E1B005ECCC7 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
+		806AE2892D133508005ECCC7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		806AE28B2D13387C005ECCC7 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		806AE28D2D13436F005ECCC7 /* RegistationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationModel.swift; sourceTree = "<group>"; };
+		806AE2912D140180005ECCC7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		806AE2932D1401A7005ECCC7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		806AE2952D1401CC005ECCC7 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		806AE2972D140247005ECCC7 /* ResultGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameController.swift; sourceTree = "<group>"; };
+		806AE2992D1411F2005ECCC7 /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
+		806AE29B2D14120B005ECCC7 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		806AE29F2D14741E005ECCC7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		806AE2A12D14795D005ECCC7 /* CustomSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmented.swift; sourceTree = "<group>"; };
+		806AE2A32D153DBB005ECCC7 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		806AE2A52D154375005ECCC7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		806AE2A82D196C3F005ECCC7 /* Rules.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Rules.html; sourceTree = "<group>"; };
+		8073E0392D0057B200A8FE77 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8073E0402D00591B00A8FE77 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		8073E0422D00593300A8FE77 /* StatisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisController.swift; sourceTree = "<group>"; };
+		8073E0472D005C9500A8FE77 /* tilda-sans_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_light.ttf"; sourceTree = "<group>"; };
+		8073E0482D005C9500A8FE77 /* tilda-sans_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_bold.ttf"; sourceTree = "<group>"; };
+		8073E0492D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_extra-bold-.ttf"; sourceTree = "<group>"; };
+		8073E04A2D005C9500A8FE77 /* tilda-sans_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_semibold.ttf"; sourceTree = "<group>"; };
+		8073E04B2D005C9500A8FE77 /* tilda-sans_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_black.ttf"; sourceTree = "<group>"; };
+		8073E04C2D005C9500A8FE77 /* tilda-sans_vf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_vf.ttf"; sourceTree = "<group>"; };
+		8073E04D2D005C9500A8FE77 /* tilda-sans_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_regular.ttf"; sourceTree = "<group>"; };
+		8073E04E2D005C9500A8FE77 /* tilda-sans_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tilda-sans_medium.ttf"; sourceTree = "<group>"; };
+		8073E0642D0061DF00A8FE77 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		8073E0662D00793B00A8FE77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8073E06A2D007B6F00A8FE77 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8073E06C2D007C7500A8FE77 /* StatisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisModel.swift; sourceTree = "<group>"; };
 		80FDABAE2CFE124400216637 /* SocialMediaKstu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaKstu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FDABB12CFE124400216637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80FDABB32CFE124400216637 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80FDABB52CFE124400216637 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		80FDABB82CFE124400216637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80FDABB52CFE124400216637 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		80FDABBA2CFE124B00216637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80FDABBD2CFE124B00216637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80FDABBF2CFE124B00216637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +140,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806AE29E2D1412D0005ECCC7 /* FirebaseDatabase in Frameworks */,
+				8073E05D2D0060D200A8FE77 /* FirebaseAuth in Frameworks */,
+				8073E05F2D0060D200A8FE77 /* FirebaseCore in Frameworks */,
+				8073E0612D0060D200A8FE77 /* FirebaseFirestore in Frameworks */,
+				8073E0632D0060D200A8FE77 /* FirebaseStorage in Frameworks */,
+				8062723A2D119DC3001F3A4B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +166,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		806AE2882D132E3F005ECCC7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				806AE2862D132E1B005ECCC7 /* AnimatedTextField.swift */,
+				806AE2A12D14795D005ECCC7 /* CustomSegmented.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		8073E0462D005C9500A8FE77 /* Tilda-Sans */ = {
+			isa = PBXGroup;
+			children = (
+				8073E0472D005C9500A8FE77 /* tilda-sans_light.ttf */,
+				8073E0482D005C9500A8FE77 /* tilda-sans_bold.ttf */,
+				8073E0492D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf */,
+				8073E04A2D005C9500A8FE77 /* tilda-sans_semibold.ttf */,
+				8073E04B2D005C9500A8FE77 /* tilda-sans_black.ttf */,
+				8073E04C2D005C9500A8FE77 /* tilda-sans_vf.ttf */,
+				8073E04D2D005C9500A8FE77 /* tilda-sans_regular.ttf */,
+				8073E04E2D005C9500A8FE77 /* tilda-sans_medium.ttf */,
+			);
+			path = "Tilda-Sans";
+			sourceTree = "<group>";
+		};
+		8073E0572D005DE000A8FE77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				806AE2842D132AF3005ECCC7 /* LoginView.swift */,
+				806AE28B2D13387C005ECCC7 /* RegistrationView.swift */,
+				806AE2912D140180005ECCC7 /* GameView.swift */,
+				806AE2932D1401A7005ECCC7 /* MainView.swift */,
+				806AE2952D1401CC005ECCC7 /* ResultView.swift */,
+				806AE29F2D14741E005ECCC7 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8073E0582D005DEF00A8FE77 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8062722F2D095553001F3A4B /* LogInController.swift */,
+				80FDABB52CFE124400216637 /* GameViewController.swift */,
+				8062722D2D09529E001F3A4B /* RegistrationController.swift */,
+				8073E0642D0061DF00A8FE77 /* SplashViewController.swift */,
+				8073E0422D00593300A8FE77 /* StatisController.swift */,
+				8073E0392D0057B200A8FE77 /* TabBarController.swift */,
+				8073E0402D00591B00A8FE77 /* MainController.swift */,
+				806AE2972D140247005ECCC7 /* ResultGameController.swift */,
+				806AE2992D1411F2005ECCC7 /* DocumentController.swift */,
+				806AE29B2D14120B005ECCC7 /* HistoryController.swift */,
+				806AE2A32D153DBB005ECCC7 /* ProfileController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		8073E0592D005E1100A8FE77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8073E06A2D007B6F00A8FE77 /* ProfileViewModel.swift */,
+				8073E06C2D007C7500A8FE77 /* StatisModel.swift */,
+				806AE2892D133508005ECCC7 /* LoginViewModel.swift */,
+				806AE28D2D13436F005ECCC7 /* RegistationModel.swift */,
+				806AE2A52D154375005ECCC7 /* GameViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8073E05A2D005E2000A8FE77 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				80FDABBA2CFE124B00216637 /* Assets.xcassets */,
+				8073E0462D005C9500A8FE77 /* Tilda-Sans */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		80FDABA52CFE124400216637 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +265,17 @@
 		80FDABB02CFE124400216637 /* SocialMediaKstu */ = {
 			isa = PBXGroup;
 			children = (
+				806AE2882D132E3F005ECCC7 /* Custom */,
+				8073E0662D00793B00A8FE77 /* GoogleService-Info.plist */,
+				8073E05A2D005E2000A8FE77 /* Others */,
+				8073E0592D005E1100A8FE77 /* Model */,
+				8073E0582D005DEF00A8FE77 /* VC */,
+				8073E0572D005DE000A8FE77 /* View */,
 				80FDABB12CFE124400216637 /* AppDelegate.swift */,
 				80FDABB32CFE124400216637 /* SceneDelegate.swift */,
-				80FDABB52CFE124400216637 /* ViewController.swift */,
-				80FDABB72CFE124400216637 /* Main.storyboard */,
-				80FDABBA2CFE124B00216637 /* Assets.xcassets */,
 				80FDABBC2CFE124B00216637 /* LaunchScreen.storyboard */,
 				80FDABBF2CFE124B00216637 /* Info.plist */,
+				806AE2A82D196C3F005ECCC7 /* Rules.html */,
 			);
 			path = SocialMediaKstu;
 			sourceTree = "<group>";
@@ -137,12 +307,21 @@
 				80FDABAA2CFE124400216637 /* Sources */,
 				80FDABAB2CFE124400216637 /* Frameworks */,
 				80FDABAC2CFE124400216637 /* Resources */,
+				806272322D118A05001F3A4B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SocialMediaKstu;
+			packageProductDependencies = (
+				8073E05C2D0060D200A8FE77 /* FirebaseAuth */,
+				8073E05E2D0060D200A8FE77 /* FirebaseCore */,
+				8073E0602D0060D200A8FE77 /* FirebaseFirestore */,
+				8073E0622D0060D200A8FE77 /* FirebaseStorage */,
+				806272392D119DC3001F3A4B /* SnapKit */,
+				806AE29D2D1412D0005ECCC7 /* FirebaseDatabase */,
+			);
 			productName = SocialMediaKstu;
 			productReference = 80FDABAE2CFE124400216637 /* SocialMediaKstu.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +394,10 @@
 				Base,
 			);
 			mainGroup = 80FDABA52CFE124400216637;
+			packageReferences = (
+				8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				806272382D119DC3001F3A4B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 80FDABAF2CFE124400216637 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +414,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8073E0552D005C9500A8FE77 /* tilda-sans_regular.ttf in Resources */,
+				8073E0542D005C9500A8FE77 /* tilda-sans_vf.ttf in Resources */,
 				80FDABBE2CFE124B00216637 /* LaunchScreen.storyboard in Resources */,
+				8073E0562D005C9500A8FE77 /* tilda-sans_medium.ttf in Resources */,
+				806AE2A92D196D2B005ECCC7 /* Rules.html in Resources */,
+				8073E04F2D005C9500A8FE77 /* tilda-sans_light.ttf in Resources */,
 				80FDABBB2CFE124B00216637 /* Assets.xcassets in Resources */,
-				80FDABB92CFE124400216637 /* Main.storyboard in Resources */,
+				8073E0672D00793B00A8FE77 /* GoogleService-Info.plist in Resources */,
+				8073E0512D005C9500A8FE77 /* tilda-sans_extra-bold-.ttf in Resources */,
+				8073E0502D005C9500A8FE77 /* tilda-sans_bold.ttf in Resources */,
+				8073E0532D005C9500A8FE77 /* tilda-sans_black.ttf in Resources */,
+				8073E0522D005C9500A8FE77 /* tilda-sans_semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +450,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80FDABB62CFE124400216637 /* ViewController.swift in Sources */,
+				806AE2942D1401A7005ECCC7 /* MainView.swift in Sources */,
+				80FDABB62CFE124400216637 /* GameViewController.swift in Sources */,
+				8073E03A2D0057B200A8FE77 /* TabBarController.swift in Sources */,
+				806272302D095553001F3A4B /* LogInController.swift in Sources */,
+				806AE2872D132E1B005ECCC7 /* AnimatedTextField.swift in Sources */,
+				806AE28E2D13436F005ECCC7 /* RegistationModel.swift in Sources */,
+				806AE2A22D14795D005ECCC7 /* CustomSegmented.swift in Sources */,
+				806AE28C2D13387C005ECCC7 /* RegistrationView.swift in Sources */,
+				806AE28A2D133508005ECCC7 /* LoginViewModel.swift in Sources */,
 				80FDABB22CFE124400216637 /* AppDelegate.swift in Sources */,
 				80FDABB42CFE124400216637 /* SceneDelegate.swift in Sources */,
+				8073E06B2D007B6F00A8FE77 /* ProfileViewModel.swift in Sources */,
+				8073E0412D00591B00A8FE77 /* MainController.swift in Sources */,
+				806AE2962D1401CC005ECCC7 /* ResultView.swift in Sources */,
+				806AE2A42D153DBB005ECCC7 /* ProfileController.swift in Sources */,
+				806AE2A02D14741E005ECCC7 /* ProfileView.swift in Sources */,
+				806AE2A62D154375005ECCC7 /* GameViewModel.swift in Sources */,
+				806AE29A2D1411F3005ECCC7 /* DocumentController.swift in Sources */,
+				806AE2852D132AF3005ECCC7 /* LoginView.swift in Sources */,
+				806AE2922D140180005ECCC7 /* GameView.swift in Sources */,
+				8073E06D2D007C7500A8FE77 /* StatisModel.swift in Sources */,
+				806AE29C2D14120B005ECCC7 /* HistoryController.swift in Sources */,
+				806AE2982D140247005ECCC7 /* ResultGameController.swift in Sources */,
+				8073E0432D00593300A8FE77 /* StatisController.swift in Sources */,
+				8062722E2D09529E001F3A4B /* RegistrationController.swift in Sources */,
+				8073E0652D0061DF00A8FE77 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806AE2A72D1544DA005ECCC7 /* GameViewModel.swift in Sources */,
 				80FDABC92CFE124B00216637 /* SocialMediaKstuTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +513,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		80FDABB72CFE124400216637 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80FDABB82CFE124400216637 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		80FDABBC2CFE124B00216637 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -445,9 +653,10 @@
 				DEVELOPMENT_TEAM = 7TA9LBQP7D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialMediaKstu/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Сөздүн Күшү";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,9 +682,10 @@
 				DEVELOPMENT_TEAM = 7TA9LBQP7D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialMediaKstu/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Сөздүн Күшү";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,6 +817,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		806272382D119DC3001F3A4B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		806272392D119DC3001F3A4B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 806272382D119DC3001F3A4B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		806AE29D2D1412D0005ECCC7 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8073E05C2D0060D200A8FE77 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8073E05E2D0060D200A8FE77 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		8073E0602D0060D200A8FE77 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8073E0622D0060D200A8FE77 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8073E05B2D0060D200A8FE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80FDABA62CFE124400216637 /* Project object */;
 }

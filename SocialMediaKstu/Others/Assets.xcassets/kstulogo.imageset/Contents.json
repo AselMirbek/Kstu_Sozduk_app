@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "Снимок_экрана_2024-12-04_в_18.20.13-removebg-preview.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "Снимок_экрана_2024-12-04_в_18.20.13-removebg-preview 1.png",
+      "idiom" : "iphone"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
