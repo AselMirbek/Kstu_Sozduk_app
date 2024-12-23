@@ -88,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		805E301F2D198AE20058B373 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8062722D2D09529E001F3A4B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		8062722F2D095553001F3A4B /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		806AE2842D132AF3005ECCC7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -517,6 +518,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				80FDABBD2CFE124B00216637 /* Base */,
+				805E301F2D198AE20058B373 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

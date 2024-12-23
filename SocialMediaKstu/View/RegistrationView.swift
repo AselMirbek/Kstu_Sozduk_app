@@ -16,7 +16,7 @@ class RegistrationView: UIView {
         button.setTitle("Зарегистрироваться", for: .normal)
         button.layer.cornerRadius = 23
         button.backgroundColor = UIColor.colorGrey
-        button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+        button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
         
         return button
     }()
@@ -63,7 +63,7 @@ class RegistrationView: UIView {
     lazy var passwordReq: UILabel = {
         let label = UILabel()
         label.text = "At least - 8 symbols.\n To ensure security, a password \nneeds to have both letters and digits."
-        label.font = UIFont(name: "tilda-sans", size: 16)
+        label.font = UIFont(name: "Tilda Sans Bold", size: 16)
         label.textColor = UIColor.colorGrey
         label.numberOfLines = 0
         label.textAlignment = .center

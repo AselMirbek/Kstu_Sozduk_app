@@ -54,7 +54,10 @@ class LogInController: UIViewController {
         
         mainView.registrationToNextTappedButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         mainView.loginButton.addTarget(self, action: #selector(enterButtonPressed), for: .touchUpInside)
-        mainView.passwordTextField.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)}
+        //  mainView.passwordTextField.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+        if let button = mainView.passwordTextField.rightView as? UIButton {
+                button.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+            }}
         
             @objc func enterButtonPressed() {
                 if mainView.loginButton.backgroundColor != UIColor.colorGrey {
@@ -98,8 +101,15 @@ extension LogInController: UITextFieldDelegate {
     
     // Password visibility
     @objc func togglePasswordVisibility(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        mainView.passwordTextField.isSecureTextEntry = !mainView.passwordTextField.isSecureTextEntry
+        mainView.passwordTextField.isSecureTextEntry.toggle()
+        // Переключаем состояние кнопки (если текстовое поле скрывает текст, показываем "eye-disabled", иначе "eye")
+        if mainView.passwordTextField.isSecureTextEntry {
+               sender.setImage(UIImage(named: "eye-disabled"), for: .normal) // Иконка скрытого пароля
+           } else {
+               sender.setImage(UIImage(named: "eye"), for: .normal) // Иконка видимого пароля
+           }
+        //sender.isSelected = !sender.isSelected
+        //mainView.passwordTextField.isSecureTextEntry = !mainView.passwordTextField.isSecureTextEntry
     }
     
     func textFieldShouldReturn(_ LoginTextField: UITextField) -> Bool {

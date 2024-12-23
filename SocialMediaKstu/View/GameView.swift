@@ -13,14 +13,14 @@ class GameView: UIView {
     lazy var progressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
-        label.font = UIFont(name: "tilda-sans_bold", size: 18)
+        label.font = UIFont(name: "Tilda Sans Bold", size: 18)
         label.textAlignment = .center
         return label
     }()
     lazy var wordLabel : UILabel = {
         let label = UILabel()
         label.textColor = .brown
-        label.font = UIFont(name: "tilda-sans_bold", size: 40)
+        label.font = UIFont(name: "Tilda Sans Bold", size: 35)
         label.textAlignment = .center
 
         return label
@@ -36,7 +36,7 @@ class GameView: UIView {
         let button = UIButton()
         button.layer.cornerRadius = 23
         button.backgroundColor = UIColor.systemBrown
-        button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+        button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
         
         return button
     }()
@@ -44,7 +44,7 @@ class GameView: UIView {
           let button = UIButton()
           button.layer.cornerRadius = 23
           button.backgroundColor = UIColor.colorGrey
-          button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+          button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
           
           return button
       }()
@@ -52,7 +52,7 @@ class GameView: UIView {
           let button = UIButton()
           button.layer.cornerRadius = 23
           button.backgroundColor = UIColor.colorGrey
-          button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+          button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
           
           return button
       }() 
@@ -60,7 +60,7 @@ class GameView: UIView {
           let button = UIButton()
           button.layer.cornerRadius = 23
           button.backgroundColor = UIColor.colorGrey
-          button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+          button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
           
           return button
       }()

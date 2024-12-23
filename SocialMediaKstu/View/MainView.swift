@@ -14,7 +14,7 @@ class MainView: UIView {
           button.layer.cornerRadius = 23
           button.backgroundColor = UIColor.systemBrown
           button.setTitle("Начать игру", for: .normal)
-          button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+          button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
           
           return button
       }()
@@ -23,7 +23,7 @@ class MainView: UIView {
           button.layer.cornerRadius = 23
         button.setTitle("История", for: .normal)
           button.backgroundColor = UIColor.systemBrown
-          button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+          button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
           
           return button
       }()
@@ -32,7 +32,7 @@ class MainView: UIView {
           button.layer.cornerRadius = 23
           button.setTitle("Правила игры", for: .normal)
           button.backgroundColor = UIColor.systemBrown
-          button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+          button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
           
           return button
       }()

@@ -21,6 +21,7 @@ struct LoginResponse {
 
 class LoginViewModel: LoginProtocol {
     weak var delegate: LoginDelegate?
+
     func login(username: String, password: String) {
            // Проверка входных данных
            guard !username.isEmpty, !password.isEmpty else {
@@ -36,10 +37,21 @@ class LoginViewModel: LoginProtocol {
                        self?.delegate?.didFail(withError: error)
                    } else if let result = result {
                        let response = LoginResponse(email: result.user.email ?? "Unknown")
+
                        self?.delegate?.didSucceed(withData: response)
                    }
                }
            }
        
         }
+    // Функция для выхода из аккаунта
+       func logOut() {
+           do {
+               try Auth.auth().signOut()  // Попытка выхода из Firebase
+               print("User successfully logged out")
+           } catch let error {
+               print("Error signing out: \(error.localizedDescription)")
+           }
+       }
+  
 }

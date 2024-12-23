@@ -27,7 +27,7 @@ class AnimatedTextField: UITextField {
         func commonInit() {
             self.autocapitalizationType = .none
             floatingLabel.textColor = defaultPlaceholderColor
-            floatingLabel.font = UIFont(name: "tilda-sans_regular", size: 16)
+            floatingLabel.font = UIFont(name: "Tilda Sans Regular", size: 16)
             addSubview(floatingLabel)
         }
 
@@ -40,11 +40,11 @@ class AnimatedTextField: UITextField {
             if isFirstResponder || !(text?.isEmpty ?? true) {
                 floatingLabel.frame = CGRect(x: 0, y: -10, width: bounds.width, height: 12)
                 floatingLabel.textColor = defaultPlaceholderColor
-                floatingLabel.font = UIFont(name: "tilda-sans_medium", size: 14)
+                floatingLabel.font = UIFont(name: "Tilda Sans Medium", size: 14)
             } else {
                 floatingLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
                 floatingLabel.textColor = defaultPlaceholderColor
-                floatingLabel.font = UIFont(name: "tilda-sans_regular", size: 16)
+                floatingLabel.font = UIFont(name: "Tilda Sans Regular", size: 16)
             }
 
         }

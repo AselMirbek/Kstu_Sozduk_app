@@ -32,20 +32,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        window?.makeKeyAndVisible()*/
 
     }*/
-   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
         
-     
+        // Создаем экземпляр LoginViewModel
         let loginViewModel = LoginViewModel()
+        
+        // Создаем экземпляр контроллера логина
         let loginController = LogInController(viewModel: loginViewModel)
-       let navigationController = UINavigationController(rootViewController: loginController)
-
+        
+        // Устанавливаем UINavigationController с контроллером логина
+        let navigationController = UINavigationController(rootViewController: loginController)
+        
+        // Локализуем кнопку Back, если она будет отображаться
+        UINavigationBar.appearance().backItem?.title = "Назад"  // Это установит название кнопки на русском
+        
+        // Устанавливаем корневой контроллер как navigationController
         window?.rootViewController = navigationController
-       
         window?.makeKeyAndVisible()
     }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

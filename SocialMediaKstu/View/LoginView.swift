@@ -17,14 +17,14 @@ class LoginView: UIView {
         button.setTitle("Войти", for: .normal)
         button.layer.cornerRadius = 23
         button.backgroundColor = UIColor.colorGrey
-        button.titleLabel?.font = UIFont(name: "tilda-sans_bold", size: 16)
+        button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
         
         return button
     }()
     
   lazy var registrationToNextTappedButton: UIButton = {
         let button = UIButton()
-        button.titleLabel?.font = UIFont(name: "tilda-sans_medium", size: 14)
+        button.titleLabel?.font = UIFont(name: "Tilda Sans Medium", size: 14)
         button.setTitle("Зарегистрироваться", for: .normal)
       button.setTitleColor(UIColor.colorBlue, for: .normal)
 
