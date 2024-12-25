@@ -16,7 +16,6 @@ class DocumentController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         setupCustomNavigationBar(title: "Правила", backButtonAction: #selector(backPressed))
 
-        // Создаем конфигурацию WKWebView
         let webViewConfiguration = WKWebViewConfiguration()
         
         // Инициализация WKWebView

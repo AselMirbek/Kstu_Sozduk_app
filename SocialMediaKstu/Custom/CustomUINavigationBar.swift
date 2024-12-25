@@ -8,29 +8,27 @@
 import UIKit
 import Foundation
 extension UIViewController {
-    func setupCustomNavigationBar(title: String, backButtonAction: Selector?, titleColor: UIColor = .black, titleFont: UIFont = UIFont.systemFont(ofSize: 18)) {
-        // Устанавливаем кастомный титул
+    func setupCustomNavigationBar(title: String, backButtonAction: Selector?, titleColor: UIColor = .black, titleFontSize: CGFloat = 20) {
         self.title = title
-        // Настройка цвета и шрифта титула
         self.navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: titleColor,
-            .font: titleFont
+            .font: UIFont.systemFont(ofSize: titleFontSize, weight: .bold)
         ]
         
         // Кнопка "Назад"
         let backButton = UIBarButtonItem(image: UIImage(named: "backButton")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: backButtonAction)
         self.navigationItem.leftBarButtonItem = backButton
-        
+        navigationController?.navigationBar.barTintColor = .white
+
         
     }
-    func setupTitleCustomNavigationBar(title: String, titleColor: UIColor = .black, titleFont: UIFont = UIFont.systemFont(ofSize: 18)) {
-        // Устанавливаем кастомный титул
+    func setupTitleCustomNavigationBar(title: String, titleColor: UIColor = .black, titleFontSize: CGFloat = 20) {
         self.title = title
-        // Настройка цвета и шрифта титула
               self.navigationController?.navigationBar.titleTextAttributes = [
                   .foregroundColor: titleColor,
-                  .font: titleFont
+                  .font: UIFont.systemFont(ofSize: titleFontSize, weight: .bold)
               ]
               
-      
+        navigationController?.navigationBar.barTintColor = .white
+
     }}

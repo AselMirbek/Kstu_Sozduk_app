@@ -45,7 +45,8 @@ class ProfileViewModel {
             "gender": gender,
             "age": age,
             "email": email,
-            "birthDate": Timestamp(date: birthDate) // Firestore поддерживает тип Timestamp
+            "birthDate": Timestamp(date: birthDate)
+            // Firestore тип Timestamp
 
         ]
         print("Сохраняемые данные: \(data)")

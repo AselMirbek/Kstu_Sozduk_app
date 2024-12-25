@@ -139,10 +139,9 @@ extension RegistrationController: RegistrationDelegate {
                                                       message: "Вы успешно зарегистрированы! Теперь вы можете начать пользоваться приложением.",
                                                       preferredStyle: .alert)
               
-              // Кнопка OK
               let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                  // Переход на экран аккаунта пользователя (например, на экран профиля)
-                  let tabbarController = TabBarController()  // Здесь ваш контроллер профиля
+                  
+                  let tabbarController = TabBarController()  
                   tabbarController.modalPresentationStyle = .fullScreen
                   self.present(tabbarController, animated: true, completion: nil)
 

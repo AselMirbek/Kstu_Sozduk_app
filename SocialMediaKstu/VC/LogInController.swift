@@ -30,7 +30,6 @@ class LogInController: UIViewController {
             super.viewDidLoad()
             addTargets()
             addDelegates()
-   //         print("Navigation controller: \(navigationController)")
 
             
         }
@@ -102,11 +101,12 @@ extension LogInController: UITextFieldDelegate {
     // Password visibility
     @objc func togglePasswordVisibility(_ sender: UIButton) {
         mainView.passwordTextField.isSecureTextEntry.toggle()
-        // Переключаем состояние кнопки (если текстовое поле скрывает текст, показываем "eye-disabled", иначе "eye")
         if mainView.passwordTextField.isSecureTextEntry {
-               sender.setImage(UIImage(named: "eye-disabled"), for: .normal) // Иконка скрытого пароля
+               sender.setImage(UIImage(named: "eye-disabled"), for: .normal) 
+            // Иконка скрытого пароля
            } else {
-               sender.setImage(UIImage(named: "eye"), for: .normal) // Иконка видимого пароля
+               sender.setImage(UIImage(named: "eye"), for: .normal) 
+               // Иконка видимого пароля
            }
         //sender.isSelected = !sender.isSelected
         //mainView.passwordTextField.isSecureTextEntry = !mainView.passwordTextField.isSecureTextEntry

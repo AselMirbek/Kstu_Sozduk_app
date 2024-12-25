@@ -68,7 +68,7 @@ class AnimatedTextField: UITextField {
             }
             return result
         }
-
+    
         override func resignFirstResponder() -> Bool {
             let result = super.resignFirstResponder()
             UIView.animate(withDuration: 0.3) {

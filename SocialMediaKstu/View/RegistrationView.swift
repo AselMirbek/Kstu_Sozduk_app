@@ -21,7 +21,6 @@ class RegistrationView: UIView {
         return button
     }()
     
-    // Login Text Field
    lazy var loginTextField: AnimatedTextField = {
         let textField = AnimatedTextField()
         textField.placeholder = "Почта"

@@ -12,8 +12,9 @@ class MainView: UIView {
     lazy var startgameButton: UIButton = {
           let button = UIButton()
           button.layer.cornerRadius = 23
-          button.backgroundColor = UIColor.systemBrown
+          button.backgroundColor = UIColor.colorBlue
           button.setTitle("Начать игру", for: .normal)
+         button.setTitleColor(.white, for: .normal)
           button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
           
           return button
@@ -22,7 +23,9 @@ class MainView: UIView {
           let button = UIButton()
           button.layer.cornerRadius = 23
         button.setTitle("История", for: .normal)
-          button.backgroundColor = UIColor.systemBrown
+        button.setTitleColor(.white, for: .normal)
+
+          button.backgroundColor = UIColor.colorBlue
           button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
           
           return button
@@ -31,7 +34,9 @@ class MainView: UIView {
           let button = UIButton()
           button.layer.cornerRadius = 23
           button.setTitle("Правила игры", for: .normal)
-          button.backgroundColor = UIColor.systemBrown
+        button.setTitleColor(.white, for: .normal)
+
+          button.backgroundColor = UIColor.colorBlue
           button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 16)
           
           return button
@@ -56,21 +61,21 @@ class MainView: UIView {
         startgameButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(274)
             make.centerX.equalToSuperview()
-            make.height.equalTo(35)
+            make.height.equalTo(70)
             make.width.equalTo(150)
             
         }
         instruksiaButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(320)
+            make.top.equalTo(startgameButton.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
-            make.height.equalTo(35)
+            make.height.equalTo(70)
             make.width.equalTo(150)
             
         }
         historyButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(370)
+            make.top.equalTo(instruksiaButton.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
-            make.height.equalTo(35)
+            make.height.equalTo(70)
             make.width.equalTo(150)
             
         }

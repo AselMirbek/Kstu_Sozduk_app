@@ -4,7 +4,6 @@ import Charts
 import CoreGraphics
 import SnapKit
 class StatisticsViewController: UIViewController {
-    // Создаем таблицу
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,14 +22,35 @@ class StatisticsViewController: UIViewController {
         
         return label
     }()
+    private var title1Label : UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "Гендер"
+        label.font = UIFont(name: "Tilda Sans Bold", size: 28)
+        label.textAlignment = .center
+        
+        return label
+    }()
+    private var title2Label : UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "Возрастные группы"
+        label.font = UIFont(name: "Tilda Sans Bold", size: 28)
+        label.textAlignment = .center
+        
+        return label
+    }()
+
     private let barChartView: BarChartView = {
         let chartView = BarChartView()
         chartView.translatesAutoresizingMaskIntoConstraints = false
-        chartView.legend.enabled = true // Включаем легенду
-        chartView.xAxis.labelPosition = .bottom // Подписи оси X внизу
+        chartView.legend.enabled = true
+        chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.drawGridLinesEnabled = false // Убираем линии сетки
         chartView.rightAxis.enabled = false // Убираем правую ось
         chartView.leftAxis.axisMinimum = 0 // Минимум оси Y — 0
+        chartView.layer.zPosition = -1
+
         return chartView
     }()
     private let pieChartView: PieChartView = {
@@ -40,6 +60,8 @@ class StatisticsViewController: UIViewController {
                chart.legend.enabled = true  // Включение легенды
                chart.drawSlicesUnderHoleEnabled = false  // Отключение отображения под диаграммой
                chart.holeColor = .white  // Цвет центральной дырки
+        chart.layer.zPosition = -1
+
                return chart    }()
     private let viewModel = StatisticsViewModel()
     private let chartViewModel = ChartViewModel()
@@ -49,12 +71,17 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupTitleCustomNavigationBar(title: "Статистика")
+        overrideUserInterfaceStyle = .light
+        navigationController?.navigationBar.barTintColor = .white
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchData()
-        self.updateBarChart()
+        self.fetchData()
+        navigationController?.navigationBar.barTintColor = .white
+
         
     }
     
@@ -72,32 +99,43 @@ class StatisticsViewController: UIViewController {
            
            contentView.snp.makeConstraints { make in
                make.width.equalToSuperview()
-               make.top.equalToSuperview()
-               make.bottom.equalToSuperview()
+               make.edges.equalToSuperview()
+
            }
         contentView.addSubview(tableView)
         contentView.addSubview(barChartView)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(title1Label)
+        contentView.addSubview(title2Label)
+
         contentView.addSubview(pieChartView)
 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
-     
+        title1Label.snp.makeConstraints{make in
+            make.top.equalToSuperview().inset(100)
+            make.centerX.equalToSuperview()
+        }
            
         barChartView.snp.makeConstraints{make in
-            make.top.equalToSuperview().inset(100)
+            make.top.equalTo(title1Label.snp.bottom).offset(30)
             make.leading.equalToSuperview().inset(20)
             make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(300)
         }
-        pieChartView.snp.makeConstraints{make in
+        title2Label.snp.makeConstraints{make in
             make.top.equalTo(barChartView.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
+        }
+        pieChartView.snp.makeConstraints{make in
+            make.top.equalTo(title2Label.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
             make.height.equalTo(300)
             make.width.equalTo(300)
 
         }
+     
         titleLabel.snp.makeConstraints{make in
             make.top.equalTo(pieChartView.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
@@ -105,8 +143,8 @@ class StatisticsViewController: UIViewController {
         tableView.snp.makeConstraints{make in
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
             make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(contentView.snp.bottom).inset(20) // Добавьте нижнее ограничение
-            
+            make.bottom.equalToSuperview().inset(20)
+            make.height.equalTo(400)
         }
         
         
@@ -138,7 +176,7 @@ class StatisticsViewController: UIViewController {
         var ageCounts = [0, 0, 0, 0]
         
         // Разбиваем пользователей на возрастные группы
-        for user in userCharts { // Используем userCharts, а не users
+        for user in userCharts {
             let ageIndex: Int
             switch user.age {
             case 0...20:
@@ -150,33 +188,60 @@ class StatisticsViewController: UIViewController {
             default:
                 ageIndex = 3
             }
-            
-            // Увеличиваем соответствующий счетчик
             ageCounts[ageIndex] += 1
         }
         
-        // Преобразуем данные в формат, который требуется для диаграммы
-        let entries = zip(ageRanges, ageCounts).map { PieChartDataEntry(value: Double($0.1), label: $0.0) }
+        let entries = zip(ageRanges, ageCounts).map { PieChartDataEntry(value: Double($0.1), label: "") }
         
         // Создаем набор данных для диаграммы
         let dataSet = PieChartDataSet(entries: entries, label: "Возрастные группы")
         
         // Настроим цвета для секторов
-        dataSet.colors = [UIColor.blue, UIColor.green, UIColor.orange, UIColor.red]
+        let colors: [UIColor] = [UIColor.blue, UIColor.green, UIColor.orange, UIColor.red]
+        dataSet.colors = colors
         
-        // Настроим отображение значений на диаграмме
+        // Настраиваем отображение значений как проценты
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        formatter.maximumFractionDigits = 0
+        formatter.multiplier = 100.0
+        
+        let valueFormatter = DefaultValueFormatter(formatter: formatter)
+        dataSet.valueFormatter = valueFormatter
         dataSet.valueTextColor = .black
         dataSet.valueFont = .systemFont(ofSize: 14)
         
-        // Создаем объект данных для диаграммы
         let data = PieChartData(dataSet: dataSet)
         
         // Передаем данные в график
-        pieChartView.data = data
+        DispatchQueue.main.async {
+            self.pieChartView.data = data
+            self.pieChartView.notifyDataSetChanged()         }
+        
+        // Настраиваем легенду
+        let legend = pieChartView.legend
+        legend.enabled = true
+        legend.horizontalAlignment = .center
+        legend.verticalAlignment = .bottom
+        legend.orientation = .horizontal
+        legend.drawInside = false
+        legend.font = .systemFont(ofSize: 12)
+        legend.textColor = .black
+        
+        let customLegendEntries = zip(ageRanges, colors).map { (ageRange, color) -> LegendEntry in
+            let entry = LegendEntry()
+            entry.label = ageRange
+            entry.form = .circle
+            entry.formColor = color
+            return entry
+        }
+        legend.setCustom(entries: customLegendEntries)
+        
+        // Анимация диаграммы
+        pieChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .easeOutBack)
     }
 
     private func updateBarChart() {
-        // Подсчитываем количество мужчин и женщин
         var maleCount = 0
         var femaleCount = 0
 
@@ -188,25 +253,24 @@ class StatisticsViewController: UIViewController {
             }
         }
 
-        // Выводим значения для отладки
         print("Мужчины: \(maleCount), Женщины: \(femaleCount)")
 
-        // Создаем записи для графика с целыми числами
+        //  записи для графика с целыми числами
         let maleEntry = BarChartDataEntry(x: 0, y: Double(maleCount))
-        let femaleEntry = BarChartDataEntry(x: 0.5, y: Double(femaleCount))
+        let femaleEntry = BarChartDataEntry(x: 1.2, y: Double(femaleCount))
 
-        // Настроим наборы данных для мужчин и женщин
+        // наборы данных для мужчин и женщин
         let maleDataSet = BarChartDataSet(entries: [maleEntry], label: "Мужчины")
         maleDataSet.colors = [UIColor.blue.withAlphaComponent(0.7)] // Полупрозрачный синий
         maleDataSet.valueTextColor = .black
         maleDataSet.valueFont = .systemFont(ofSize: 12)
-        maleDataSet.drawValuesEnabled = true // Показываем значения на графике
+        maleDataSet.drawValuesEnabled = true
 
         let femaleDataSet = BarChartDataSet(entries: [femaleEntry], label: "Женщины")
         femaleDataSet.colors = [UIColor.red.withAlphaComponent(0.7)] // Полупрозрачный красный
         femaleDataSet.valueTextColor = .black
         femaleDataSet.valueFont = .systemFont(ofSize: 12)
-        femaleDataSet.drawValuesEnabled = true // Показываем значения на графике
+        femaleDataSet.drawValuesEnabled = true
 
         // Объединяем данные для баров
         let data = BarChartData(dataSets: [maleDataSet, femaleDataSet])
@@ -223,12 +287,11 @@ class StatisticsViewController: UIViewController {
 
         // Настройка оси Y
         barChartView.leftAxis.axisMinimum = 0
-        let maxValue = max(maleCount, femaleCount) + 1 // Добавляем 1 для визуального отступа
-        barChartView.leftAxis.axisMaximum = Double(maxValue) // Устанавливаем максимальное значение на оси Y
+        let maxValue = max(maleCount, femaleCount) + 1
+        barChartView.leftAxis.axisMaximum = Double(maxValue)
         barChartView.leftAxis.labelTextColor = .black
         barChartView.leftAxis.labelFont = .systemFont(ofSize: 12)
 
-        // Отключаем правую ось
         barChartView.rightAxis.enabled = false
 
         // Настройка легенды
@@ -252,27 +315,27 @@ extension StatisticsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? CustomTableViewCell else {
+            print("Создана ячейка для строки \(indexPath.row)")
+
             return UITableViewCell()
         }
 
         let userStat = userStatistics[indexPath.row]
         cell.configure(with: userStat)
-        cell.detailLabel.text = "\(userStat.correctAnswers)правильных ответов из 10"
+        cell.detailLabel.text = "\(userStat.correctAnswers) правильных ответов из 10"
         cell.emailLabel.text = "\(indexPath.row + 1). \(userStat.email)"
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70 // Высота каждой строки
+        return 70
     }
-    // Изменяем цвет при нажатии
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           // Меняем цвет фона выбранной ячейки на бежевый
            let cell = tableView.cellForRow(at: indexPath)
            cell?.contentView.backgroundColor = .white
+           
        }
 
-       // Восстанавливаем цвет при отмене выбора ячейки
        func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
            let cell = tableView.cellForRow(at: indexPath)
            cell?.contentView.backgroundColor = .white

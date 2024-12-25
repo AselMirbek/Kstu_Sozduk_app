@@ -11,6 +11,12 @@ import SnapKit
 
 class LoginView: UIView {
     
+    lazy var imageIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "wordtoys.jpg")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     // MARK: - UI COMPONENTS
   lazy var loginButton: UIButton = {
         let button = UIButton()
@@ -24,14 +30,13 @@ class LoginView: UIView {
     
   lazy var registrationToNextTappedButton: UIButton = {
         let button = UIButton()
-        button.titleLabel?.font = UIFont(name: "Tilda Sans Medium", size: 14)
+        button.titleLabel?.font = UIFont(name: "Tilda Sans Medium", size: 16)
         button.setTitle("Зарегистрироваться", for: .normal)
       button.setTitleColor(UIColor.colorBlue, for: .normal)
 
         return button
     }()
 
-    // Login Text Field
    lazy var loginTextField: AnimatedTextField = {
         let textField = AnimatedTextField()
         textField.placeholder = "Почта"
@@ -54,8 +59,8 @@ class LoginView: UIView {
          textField.isSecureTextEntry = true
 
          let button = UIButton(type: .custom)
-         button.configuration = .plain() // Use UIButtonConfiguration
-         button.configuration?.imagePadding = 16 // Adjust image padding
+         button.configuration = .plain()
+         button.configuration?.imagePadding = 16 
          button.setImage(UIImage(named: "eye-disabled"), for: .normal)
          button.setImage(UIImage(named: "eye"), for: .selected)
          button.frame = CGRect(x: textField.frame.size.width - 25, y: 5, width: 25, height: 25)
@@ -111,6 +116,7 @@ class LoginView: UIView {
     }
     
     private func setUI(){
+        addSubview(imageIcon)
         addSubview(loginButton)
         addSubview(registrationToNextTappedButton)
         addSubview(nameLine)
@@ -119,7 +125,13 @@ class LoginView: UIView {
         addSubview(passwordTextField)
         addSubview(statusLabel)
 
-        
+        imageIcon.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(50)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(150)
+            make.height.equalTo(170)
+            
+        }
         loginTextField.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(293)
             make.leading.equalToSuperview().inset(20)
@@ -159,9 +171,8 @@ class LoginView: UIView {
         registrationToNextTappedButton.snp.makeConstraints{
             make in
             make.top.equalToSuperview().inset(737.5)
-            make.leading.equalToSuperview().inset(112.5)
-            make.trailing.equalToSuperview().inset(112.5)
-        } 
+            make.centerX.equalToSuperview()
+        }
         statusLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(44)
             make.leading.equalToSuperview().inset(28)

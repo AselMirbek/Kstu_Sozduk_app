@@ -19,7 +19,7 @@ class GameView: UIView {
     }()
     lazy var wordLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .brown
+        label.textColor = .darkGray
         label.font = UIFont(name: "Tilda Sans Bold", size: 35)
         label.textAlignment = .center
 
@@ -35,7 +35,6 @@ class GameView: UIView {
   lazy var answer1Button: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 23
-        button.backgroundColor = UIColor.systemBrown
         button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
         
         return button
@@ -43,7 +42,6 @@ class GameView: UIView {
     lazy var answer2Button: UIButton = {
           let button = UIButton()
           button.layer.cornerRadius = 23
-          button.backgroundColor = UIColor.colorGrey
           button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
           
           return button
@@ -51,7 +49,6 @@ class GameView: UIView {
     lazy var answer3Button: UIButton = {
           let button = UIButton()
           button.layer.cornerRadius = 23
-          button.backgroundColor = UIColor.colorGrey
           button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
           
           return button
@@ -59,7 +56,6 @@ class GameView: UIView {
     lazy var answer4Button: UIButton = {
           let button = UIButton()
           button.layer.cornerRadius = 23
-          button.backgroundColor = UIColor.colorGrey
           button.titleLabel?.font = UIFont(name: "Tilda Sans Bold", size: 18)
           
           return button
@@ -87,7 +83,6 @@ class GameView: UIView {
                    make.top.equalTo(safeAreaLayoutGuide).offset(50)
                    make.centerX.equalToSuperview()
                }
-        // Buttons grid
                 let gridStack = UIStackView()
                 gridStack.axis = .vertical
                 gridStack.spacing = 16
@@ -111,7 +106,6 @@ class GameView: UIView {
                     make.left.right.equalToSuperview().inset(20)
                     make.height.equalTo(200)
                 }
-        // Feedback label
 
                feedbackLabel.snp.makeConstraints { make in
                    make.top.equalTo(gridStack.snp.bottom).offset(20)

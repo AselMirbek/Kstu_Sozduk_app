@@ -27,7 +27,6 @@ class ResultGameController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
 
-        // Result Label
         resultLabel.font = .systemFont(ofSize: 24, weight: .bold)
         resultLabel.textAlignment = .center
         resultLabel.numberOfLines = 0
@@ -38,7 +37,6 @@ class ResultGameController: UIViewController {
             make.left.right.equalToSuperview().inset(20)
         }
 
-        // Play Again Button
         playAgainButton.setTitle("Играть снова", for: .normal)
         playAgainButton.titleLabel?.font = .systemFont(ofSize: 18)
         playAgainButton.addTarget(self, action: #selector(playAgainTapped), for: .touchUpInside)
@@ -62,7 +60,6 @@ class ResultGameController: UIViewController {
             correctAnswers = 0
             totalMistakes = 0
             
-            // Здесь можно перезапустить игру. Например, если есть ViewController для начала игры, его можно вызвать:
             if let gameController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as? GameViewController {
                 navigationController?.pushViewController(gameController, animated: true)
             }
