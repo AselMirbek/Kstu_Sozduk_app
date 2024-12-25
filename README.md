@@ -22,10 +22,10 @@
 Для создания интерфейса используется SnapKit, что облегчает работу с Auto Layout и ускоряет разработку UI.
 ## Технологии
 
-Frontend: Swift, SnapKit
-Backend: Firebase Firestore, Firebase Authentication
-Архитектура: MVVM
-Графики: Charts (для отображения статистики и графиков)
+### iOS: Swift, SnapKit
+### DateBase: Firebase Firestore, Firebase Authentication
+### Архитектура: MVVM
+### Графики: Charts (для отображения статистики и графиков)
 ## Установка
 
 1.Склонируйте репозиторий:
@@ -40,10 +40,21 @@ pod install
 После успешной регистрации или входа в систему, пользователь попадет в главное меню с доступом к тренажеру для изучения слов.
 Приложение отслеживает прогресс пользователя и отображает статистику, включая топ-10 игроков.
 Статистика доступна в виде графиков и таблиц, предоставленных через Charts.
+
 ## Скриншоты
-![Главный экран приложения](sceenshots/IMG_1907.PNG)![Главный экран приложения](sceenshots/IMG_1908.PNG)![Главный экран приложения](sceenshots/IMG_1909.PNG)![Главный экран приложения](sceenshots/IMG_1910.PNG)![Главный экран приложения](sceenshots/IMG_1911.PNG)
-![Главный экран приложения](sceenshots/IMG_1912.PNG)![Главный экран приложения](sceenshots/IMG_1914.PNG)![Главный экран приложения](sceenshots/IMG_1915.PNG)![Главный экран приложения](sceenshots/IMG_1916.PNG)![Главный экран приложения](sceenshots/IMG_1917.PNG)
-![Главный экран приложения](sceenshots/IMG_1918.PNG)![Главный экран приложения](sceenshots/IMG_1919.PNG)
+
+<img src="sceenshots/IMG_1907.PNG" alt="Войти экран приложения" width="300"/><img src="sceenshots/IMG_1908.PNG" alt="Регистрация экран приложения" width="300"/>
+<img src="sceenshots/IMG_1909.PNG" alt="Статистика таббар экран приложения" width="300"/>
+<img src="sceenshots/IMG_1910.PNG" alt="Статистика 2 экран приложения" width="300"/>
+<img src="sceenshots/IMG_1911.PNG" alt="Профиль экран приложения" width="300"/>
+<img src="sceenshots/IMG_1912.PNG" alt="Главный экран приложения" width="300"/>
+<img src="sceenshots/IMG_1914.PNG" alt="Игра экран приложения" width="300"/>
+<img src="sceenshots/IMG_1915.PNG" alt="Игра/Правильный экран приложения" width="300"/>
+<img src="sceenshots/IMG_1916.PNG" alt="Игра/Неправильный экран приложения" width="300"/>
+<img src="sceenshots/IMG_1917.PNG" alt="Результат игры экран приложения" width="300"/>
+<img src="sceenshots/IMG_1918.PNG" alt="Правила экран приложения" width="300"/>
+<img src="sceenshots/IMG_1919.PNG" alt="История экран приложения" width="300"/>
+
 ## Лицензия
 
 Этот проект лицензирован под лицензией MIT. Подробности см. в файле LICENSE.
